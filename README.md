@@ -20,3 +20,9 @@ python macro.py record meus_eventos.jsonl
 ```
 python macro.py play meus_eventos.jsonl --loop
 ```
+
+
+Comando completo, para ficar mais fácil
+```
+python3 -m venv bot_python_games && cd bot_python_games && source bin/activate && pip install pynput && cd ../
+```
