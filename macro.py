@@ -202,6 +202,9 @@ def play_macro(
             if not loop:
                 break
 
+            print("⏳ Aguardando 10 minutos antes da próxima repetição...")
+            time.sleep(600)
+
     except KeyboardInterrupt:
         print("\n⏹️ Execução interrompida pelo usuário.")
 
