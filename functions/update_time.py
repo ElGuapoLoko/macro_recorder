@@ -1,6 +1,6 @@
 import json
 
-base = 0
+base = 1330
 
 input_file = "entrada.jsonl"
 output_file = "saida.jsonl"
