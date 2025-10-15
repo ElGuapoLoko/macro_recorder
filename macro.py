@@ -45,8 +45,8 @@ def record_macro(outfile: Path) -> None:
         return round(time.perf_counter() - start_ts, 6)
 
     # --- Coleta de mouse ---
-    # def on_move(x, y):
-    #     events.append({"t": now(), "type": "move", "x": int(x), "y": int(y)})
+    def on_move(x, y):
+        events.append({"t": now(), "type": "move", "x": int(x), "y": int(y)})
 
     def on_click(x, y, button, pressed):
         events.append({
@@ -75,7 +75,7 @@ def record_macro(outfile: Path) -> None:
     print("🎥 Gravando... (aperte ESC para parar)")
 
     # Listeners principais
-    ml = mouse.Listener(on_click=on_click, on_scroll=on_scroll)
+    ml = mouse.Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll)
     kl = keyboard.Listener(on_press=on_press, on_release=on_release)
 
     # Hotkey global para ESC
@@ -202,8 +202,8 @@ def play_macro(
             if not loop:
                 break
 
-            print("⏳ Aguardando 3 minutos antes da próxima repetição...")
-            time.sleep(200)
+            print("Aguardando antes da próxima repetição...")
+            time.sleep(10)
 
     except KeyboardInterrupt:
         print("\n⏹️ Execução interrompida pelo usuário.")
